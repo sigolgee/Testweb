@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>읽을 책</title>
+	<style>
+		*{
+			margin: 0; padding: 0;
+			font-family: ' 맑은고딕', 'Malgun Gothic', Gothic, sans-serif;
+		}
+		a { text-decoration: none; }
+		li { list-style: none; }
+	</style>
+	<!-- 기본 클래스 -->
+	<style>
+		.pull-left { float: left; }
+		.pull-right { float: right; }
+	</style>
+	<!-- 2.페이지 구성하기 -->
+	<style>
+		body {
+			width: 960px; margin: 0 auto;
+			background: #E6E6E6;
+		}
+
+		#page-wrapper {
+			background: white;
+			margin: 40px 0; padding: 10px 20px;
+			border-radius: 5px;
+			box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
+		}
+	</style>
+	<!-- 3. 헤더 구성하기 -->
+	<style>
+		#main-header { padding: 40px 50px; }
+		.master-title { 
+		font-size: 30px;
+		color: #181818;
+		}
+		.master-description {
+			font-size: 15px; font-weight: 500;
+			color: #383838;
+		}
+	</style>
+	<!-- 4. 내비게이션 및 풀다운 메뉴 구성하기 -->
+	<style>
+		#main-navigation {
+			border-top: 1px solid #C8C8C8;
+			border-bottom: 1px solid #C8C8C8;
+			margin-bottom: 20px;
+			height: 40px;
+		}
+
+		.outer-menu-item {
+			float: left;
+			position: relative;
+		}
+		.outer-menu-item:hover {
+			background: black;
+			color: white;
+		}
+
+		.menu-title {
+			display: block;
+			height: 30px; line-height: 30px;
+			text-align: center;
+			padding: 5px 20px;
+		} 
+
+		.inner-menu {
+			display: none;
+			position: absolute;
+			top: 40px; left:0;
+			width: 100%;
+
+			background: white;
+			box-shadow: 0 2px 6px rgba(5, 5, 5, 0.9);
+			z-index: 1000;
+
+			text-align: center
+		}
+
+		.inner-menu-item > a {
+			display: block;
+			padding: 5px 10px;
+			color: black
+		}
+
+		.inner-men-item > a:hover {
+			background: black;
+			color: white;
+		}
+		</style>
+		<!-- 5.  검색 양식 추가하기(내비게이션 내부의 검색) -->
+		<style>
+			.search-bar {
+				height: 26px;
+				padding: 7px;
+			}
+			.input-search {
+				display: block;
+				float: left;
+
+				background-color: #FFFFFF;
+				border: 1px solid #CCCCCC;
+				border-radius: 15px 0 0 15px;
+				box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+
+				width: 120px; height: 24px;
+				padding: 0 0 0 10px;
+				font-size: 12px;
+				color: #555555;
+			}
+
+			.input-search:focus {
+				border-color: rgba(82, 168, 236, 0.8);
+				outline: 0;
+				box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+			}
+
+			.input-search-submit {
+				display: block;
+				float: left;
+
+				width: 50px; height: 26px;
+				border-radius: 0 15px 15px 0;
+				border: 1px solid #CCCCCC;
+
+				margin-left: -1px;
+				vertical-align: top;
+				display: inline-block;
+			}
+			</style>
+			<!-- 6. 본문 추가하기(중앙내용) -->
+			<style>
+				/* body 태그의 너비: 960px */
+				/* #page-wrapper 태그의 padding 속성으로 내용물 너비는 920px */
+				#content { overflow: hidden; }
+				#main-section {
+					float: left;
+					width: 710px;
+				}
+				#main-aside {
+					float: right;
+					width: 200px;
+				}
+			</style>
+			<!-- 6. 본문 추가하기(분문 포스트 상단) -->
+			<style>
+				article {
+					padding: 0 10px 20px 10px;
+					border-bottom: 1px solid #C8C8C8;
+				}
+
+				.article-header { padding: 20px 0; }
+				.article-title {
+					font-size: 25px;
+					font-weight: 500;
+					padding-bottom: 10px;
+				}
+				.article-date { font-size: 13px; }
+				.article-body {
+					font-size: 14px;
+				}
+			</style>
+			<!-- 6. 분문 추가하기(사이드 메뉴) -->
+			<style>
+				.aside-list { padding: 10px 0 30px 0; }
+				.aside-list > h3 {
+					font-size: 15px;
+					font-weight: 600;
+				}
+				.aside-list li a {
+					margin-left: 8px;
+					font-size: 13px;
+					color: #6C6C6C;
+				}
+			</style>
+
+
+</body>
+<div id = "page-wrapper">
+
+    <header id="main-header">
+        <hgroup>
+            <h1 class="master-title"><a href="index.html">전자공학과 박태웅</a></h1>
+            <h2 class="master-description">자기개발 책에관하여</h2>
+        </hgroup>
+    </header>
+
+    <nav id ="main-navigation">
+        <div class="pull-left">
+            <ul class="outer-menu">
+                
+                    <li class="outer-menu-item">
+                    <span class="menu-title">읽을 책</span>
+                    </ul>
+                </li>
+
+                <li class="outer-menu-item">
+                    <span class="menu-title">취업 계획</span>
+                    <ul class="inner-menu">
+                        <li class="inner-menu-item"><a href="취업 계획.html">학점계획</a></li>
+                        <li class="inner-menu-item"><a href="취업 스펙 준비 계획.html">진학계획</a></li>
+                    </ul>
+                </li>
+
+                <li class="outer-menu-item">
+                    <span class="menu-title">헬스 계획</span>
+                    <ul class="inner-menu">
+                        <li class="inner-menu-item"><a href="식단 계획.html">식단</a></li>
+                        <li class="inner-menu-item"><a href="운동 계획.html">운동</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+
+            </ul>
+
+        </div>
+
+    </nav>
+
+    <div id="content">
+        <section id="main-section">
+
+            <article>
+                
+                <div class="article-header">
+                    <h1 class="article-title">미움받을 용기</h1>
+                </div>
+
+                <div class="article-body">
+                    <img src="./image/미움받을 용기.jpg" alt="책 사진">
+                    <br>
+                    <br>
+                    <p>미움받을 용기</p>
+                    <br>
+                    <p>『미움받을 용기』는 아들러 심리학에 관한 일본의 1인자 철학자 기시미 이치로와 베스트셀러 작가인 고가 후미타케의 저서로, 아들러의 심리학을 ‘대화체’로 쉽고 맛깔나게 정리하고 있다.
+                                                                          아들러 심리학을 공부한 철학자와 세상에 부정적이고 열등감 많은 청년이 다섯 번의 만남을 통해 ‘어떻게 행복한 인생을 살 것인가’라는, 모두가 궁금해하는 질문에 답을 찾아가는 여정을 그렸다.
+                                                                          첫 번째 밤부터 다섯 번째 밤까지의 순서로 진행되는 동안 철학자와 청년의 대화는 점점 긴장감을 불러일으키며 재미를 더한다. 특히 철학자의 주장에 이어지는 청년의 반박은 공감대를 한껏 불러일으킨다.
+                                                                          자존감이 낮고 남 눈치를 많이보는 나에게 큰 도움이 될것이다.</p>
+                    <br>						
+                </div>
+
+            </article>
+
+            <article>
+                
+                <div class="article-header">
+                    <h1 class="article-title">과학혁명의 구조</h1>
+                </div>
+
+                <div class="article-body">
+                    <img src="./image/과학혁명의 구조.jpg" alt="책 사진">
+                    <br>
+                    <br>
+                    <p>과학혁명의 구조</p>
+                    <br>
+                    <p>『과학혁명의 구조』는 현대 물질문명을 받쳐주고 있는 과학의 본질적 성격을 파헤치고 있어 현대 지식인들이 꼭 읽어야 할 고전이다. 
+                                                                         《과학혁명의 구조》(1962)의 출간 50주년을 기념하여 출간된 이 책에서는 저명한 분석 철학자이자 토머스 쿤의 패러다임 이론을 푸코의 사회과학 이론에 접목시켰다는 평가를 받는 과학철학자 이언 해킹이 쓴 서론이 추가되었으며 서울대학교 홍성욱 교수가 공역자로 참여한 새로운 번역판이다. 
+                                                                         『과학혁명의 구조』는 서구 지식사회에 미친 방대한 영향을 정리하고 '과학'의 진보가 이룩되는 과정을 체계적으로 요약한다. 쿤에 의해서 제시된 패러다임과 공약불가능성 같은 개념을 명확히 하여 쿤의 아이디어가 오늘날 과학에 어떤 타당성을 가지는지 검토하고 있다.
+                                                                         현대 과학 이론이 자리잡기까지의 여정에 대해서 알고 싶다. 나의 지식에 큰 도움이 될것이다</p>
+            
+                </div>
+
+            </article>
+        </section>
+        <aside id="main-aside">
+            
+            <div class="aside-list">
+                <h3>카테고리</h3>
+                <ul>
+                    <li><a href="읽을 책.html">-읽을 책</a></li>
+
+                </ul>
+            </div>
+</html>
